@@ -37,8 +37,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  array.push(elemento)
-  return array
+  return array.push(elemento)
 }
 
 
@@ -47,8 +46,7 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-  array.unshift(elemento)
-  return array
+  return array.unshift(elemento)
 }
 
 
@@ -60,10 +58,10 @@ function dePalabrasAFrase(palabras) {
   // Tu código:
   var frase=palabras[0]
   for (var i = 1; i < palabras.length; i++) {
-    frase=frase+" "+palabras[i]
+    frase=" "+palabras[i]
   }
-
   return frase
+
 }
 
 
@@ -71,12 +69,13 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+
   for (var i = 0; i < array.length; i++) {
     if (array[i]===elemento) {
       return true
     }
+    return false
   }
-  return false
 }
 
 
@@ -97,8 +96,8 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
   var suma=0
-  for (var i = 0; i < resultadosTest.length; i++) {
-    suma=suma+resultadosTest[i]
+  for (var i = 0; i < numeros.length; i++) {
+    suma=suma+numeros[i]
   }
 
   return suma/i
@@ -121,20 +120,11 @@ function numeroMasGrande(numeros) {
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-
-  if (arguments.length===1) {
-    return arguments[0]
-  } else if (arguments[0]===undefined) {
-    return 0
-  }
-
-  var mult=1//arguments[0]
-  var mult2
-  for (var i = 0; i < arguments.length; i++) {
-    mult2=arguments[i]
-    mult=mult2 * mult;
+  var mult=arguments[0]
+  for (var i = 1; i < arguments.length; i++) {
+    mult=arguments[i]*mult
   }
 
   return mult
@@ -147,11 +137,10 @@ function cuentoElementos(arreglo){
   var cont=0
   for (var i = 0; i < arreglo.length; i++) {
     if (arreglo[i]>18) {
-      cont=cont+1
+        cont=cont++
     }
   }
   return cont
-
 }
 
 
@@ -165,7 +154,6 @@ function diaDeLaSemana(numeroDeDia) {
   } else {
     return "Es dia Laboral"
   }
-
 }
 
 
@@ -173,6 +161,9 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  //9  90 99  900 999   9000 9999
+  //rango bajo es      9 *10 --> 9
+  //rango alto es 100-1=10*10-1 --> 99
   if (n===9) {
     return true
   }
@@ -185,7 +176,6 @@ function empiezaConNueve(n) {
     mult=mult*10
   }
   return false
-
 }
 
 
@@ -260,8 +250,7 @@ function breakStatement(numero) {
       return "Se interrumpió la ejecución"
     }
   }
-  array.shift()
-  return array
+  return array.shift()
 }
 
 
@@ -274,15 +263,13 @@ function continueStatement(numero) {
   // Tu código:
   var array=["ini"]
   for (var i = 0; i < 10; i++) {
+    numero=numero+2
+    array.push(numero)
     if (i===4) {
       continue
-    } else {
-      numero=numero+2
     }
-    array.push(numero)
   }
-  array.shift()
-  return array
+  return array.shift()
 }
 
 
